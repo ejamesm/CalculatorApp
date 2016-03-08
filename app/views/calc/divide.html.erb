@@ -1,5 +1,33 @@
-<h1>
-	Divide the first number by the second number
-</h1>
-
+<h1>Divide the first number by the second number</h1>
+<%= form_tag calc_dodivide_path do %>
+  <div>
+  	<% flash.each do |name, msg|%>
+  		<span> <%= msg %> </span>
+  		<br/>
+  	<% end %>
+  </div>
+	<table>
+		<tr>
+			<td>
+				First Number
+			</td>
+			<td>
+				<%= text_field_tag :firstNum %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Second Number
+			</td>
+			<td>
+				<%= text_field_tag :secondNum %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<%= submit_tag ("Divide") %>
+			</td>
+		</tr>
+	</table>
+<% end %>
 <%= link_to "Back", root_path %>

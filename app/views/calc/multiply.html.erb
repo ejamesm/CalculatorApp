@@ -1,5 +1,33 @@
-<h1>
-	Multiply the 2 numbers
-</h1>
-
+<h1>Multiply the 2 numbers</h1>
+<%= form_tag calc_domultiply_path do %>
+  <div>
+  	<% flash.each do |name, msg|%>
+  		<span> <%= msg %> </span>
+  		<br/>
+  	<% end %>
+  </div>
+	<table>
+		<tr>
+			<td>
+				First Number
+			</td>
+			<td>
+				<%= text_field_tag :firstNum %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Second Number
+			</td>
+			<td>
+				<%= text_field_tag :secondNum %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<%= submit_tag ("Multiply") %>
+			</td>
+		</tr>
+	</table>
+<% end %>
 <%= link_to "Back", root_path %>

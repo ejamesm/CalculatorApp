@@ -7,9 +7,15 @@ Rails.application.routes.draw do
 
   get "calc/subtract" => "calc#subtract"
 
+  post "calc_dosubtract" => "calc#dosubtract"
+
   get "calc/multiply" => "calc#multiply"
 
+  post "calc_domultiply" => "calc#domultiply"
+
   get "calc/divide" => "calc#divide"
+  
+  post "calc_dodivide" => "calc#dodivide"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
