@@ -23,7 +23,10 @@ class CalcController < ApplicationController
 			if ok
 				@firstNum = calc_params[:firstNum].to_i
 				@secondNum = calc_params[:secondNum].to_i
-				@result = @firstNum + @secondNum
+				# @result = @firstNum + @secondNum
+			  obj = Calculator.new
+			  @result = obj.add(@firstNum, @secondNum)
+			  @countString = Calculator.getCount
 			else
 				render "add"
 			end
@@ -49,7 +52,9 @@ class CalcController < ApplicationController
 			if ok
 				@firstNum = calc_params[:firstNum].to_i
 				@secondNum = calc_params[:secondNum].to_i
-				@result = @firstNum - @secondNum
+				# @result = @secondNum - @firstNum
+				obj = Calculator.new
+				@result = obj.subtract(@firstNum, @secondNum)
 			else
 				render "subtract"
 			end
@@ -75,7 +80,9 @@ class CalcController < ApplicationController
 			if ok
 				@firstNum = calc_params[:firstNum].to_i
 				@secondNum = calc_params[:secondNum].to_i
-				@result = @firstNum * @secondNum
+				# @result = @firstNum * @secondNum
+				obj = Calculator.new
+				@result = obj.multiply(@firstNum, @secondNum)
 			else
 				render "multiply"
 			end
@@ -101,7 +108,9 @@ class CalcController < ApplicationController
 			if ok
 				@firstNum = calc_params[:firstNum].to_f
 				@secondNum = calc_params[:secondNum].to_f
-				@result = @firstNum / @secondNum
+				# @result = @firstNum / @secondNum
+				obj = Calculator.new
+				@result = obj.divide(@firstNum, @secondNum)
 			else
 				render "divide"
 			end
