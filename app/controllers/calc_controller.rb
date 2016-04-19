@@ -26,7 +26,7 @@ class CalcController < ApplicationController
 				# @result = @firstNum + @secondNum
 			  obj = Calculator.new
 			  @result = obj.add(@firstNum, @secondNum)
-			  @countString = Calculator.getCount
+			  @countString = Calculator.getCountAdd
 			else
 				render "add"
 			end
@@ -55,6 +55,7 @@ class CalcController < ApplicationController
 				# @result = @secondNum - @firstNum
 				obj = Calculator.new
 				@result = obj.subtract(@firstNum, @secondNum)
+				@countString = Calculator.getCountSubtract
 			else
 				render "subtract"
 			end
@@ -83,6 +84,7 @@ class CalcController < ApplicationController
 				# @result = @firstNum * @secondNum
 				obj = Calculator.new
 				@result = obj.multiply(@firstNum, @secondNum)
+				@countString = Calculator.getCountMultiply
 			else
 				render "multiply"
 			end
@@ -111,6 +113,7 @@ class CalcController < ApplicationController
 				# @result = @firstNum / @secondNum
 				obj = Calculator.new
 				@result = obj.divide(@firstNum, @secondNum)
+				@countString = Calculator.getCountDivide
 			else
 				render "divide"
 			end

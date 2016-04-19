@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "calc#index"
 
   get "calc/add" => "calc#add"
@@ -16,6 +17,13 @@ Rails.application.routes.draw do
   get "calc/divide" => "calc#divide"
   
   post "calc_dodivide" => "calc#dodivide"
+
+  comfy_route :blog_admin, :path => '/blog/admin'
+  comfy_route :blog, :path => '/blog'
+  comfy_route :cms_admin, :path => '/cms/admin'
+    # Make sure this routeset is defined last
+  comfy_route :cms, :path => '/cms/pages', :sitemap => false
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
